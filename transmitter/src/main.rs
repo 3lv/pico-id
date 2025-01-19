@@ -117,8 +117,10 @@ fn main() -> ! {
     // 69k-690k decent but requires something very close(with amplifier might be perfect)
     // 6.9M seems strange, it gets really strange triangles, but when it comes to be read throuw
     //   human body, amplifications may be required
-    pwm_controller.set_frequency(100000);
-    pwm_controller.set_duty(69);
+    pwm_controller.set_frequency(20_000);
+    pwm_controller.set_duty(50);
+    
+    loop {};
     loop {
         for i in 0..=100 {
             pwm_controller.set_duty(i);

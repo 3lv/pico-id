@@ -1,17 +1,14 @@
-[workspace]
-members = [
-    "receiver",
-    "transmitter",
-    "tx_uart",
-    #"rx_uart",
-]
-
 [package]
-name = "pico-id"
+name = "tx_uart"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
 embedded-hal = "1.0.0"
+embedded_hal_0_2 = { package = "embedded-hal", version = "0.2.5", features = [
+  "unproven",
+] }
 panic-halt = "1.0.0"
+critical-section = "1.2.0"
 rp235x-hal = { version = "0.2.0", features = ["critical-section-impl", "rt"] }
+cortex-m = "0.7.7"
